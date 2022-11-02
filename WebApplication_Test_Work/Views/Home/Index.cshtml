@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApplication_Test_Work.Models.USDtoCurrency>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="padding-top:100px">
+
+     <a data-ajax="true"
+                       data-ajax-loading="#loading"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#partial-view-render"
+                       href='@Url.Action("CurrencyCalc", "Home")'
+                       class="btn btn-outline-primary"
+                       >Convert currency
+                       </a>
+    <a data-ajax="true"
+                       data-ajax-loading="#loading"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#partial-view-render"
+                       href='@Url.Action("DepositsCalc", "Home")'
+                       class="btn btn-outline-primary">
+                       Deposit calculator
+                       </a>
+    <div id="partial-view-render">
+    </div>
+</div>

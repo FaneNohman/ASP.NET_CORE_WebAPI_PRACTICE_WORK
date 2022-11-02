@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication_Test_Work.Models.USDtoCurrency>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div>
+    <h3>Currency convertor | Partial view</h3>
+    <p>USD</p>
+    <form data-ajax="true"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#result-render"
+          action='@Url.Action("CurrencyCalcResult", "Home")'>
+        <input type="number" name="usd" placeholder="Dollar usd" />
+        <select name="cur">
+            @foreach (var item in Model)
+            {
+                <option value=@item.Price>@Html.DisplayFor(modelItem => item.CurrencyName)</option>
+            }
+        </select>
+        <input type="submit" value="=" class="btn btn-primary"/>
+    </form>
+    <div id="result-render">
+        
+    </div>
+</div>

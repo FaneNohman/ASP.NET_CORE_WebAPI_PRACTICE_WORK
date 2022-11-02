@@ -1,0 +1,27 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h3>Deposits clculator | Partial view</h3>
+<div>
+    <p>deposits from account</p>
+    <form data-ajax="true"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#result-render"
+          action='@Url.Action("DepositsFromAccount", "Home")'>
+        <input type="text" name="name" placeholder="name of account" />
+        <input type="submit" value="calc" class="btn btn-primary" />
+    </form>
+    <p>deposits to account</p>
+    <form data-ajax="true"
+          data-ajax-loading="#loading"
+          data-ajax-mode="replace"
+          data-ajax-update="#result-render"
+          action='@Url.Action("DepositsToAccount", "Home")'>
+        <input type="text" name="name" placeholder="name of account" />
+        <input type="submit" value="calc" class="btn btn-primary" />
+    </form>
+    <div id="result-render">
+    </div>
+</div>
